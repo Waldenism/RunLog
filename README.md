@@ -5,7 +5,7 @@ Built in collaboration with
 
 * [@hbakshs](https://github.com/hirabakhsh)
 * [@waldenism](https://github.com/waldenism)
-* [@momojunzi(https://github.com/momojunzi)
+* [@momojunzi](https://github.com/momojunzi)
 
 A live demo can be viewed [here](http://www.google.com)
 
