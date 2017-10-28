@@ -1,0 +1,29 @@
+{
+  "name": "runlog",
+  "version": "1.0.0",
+  "description": "A node.js run logger",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.19.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmenschig/RunLog.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmenschig/RunLog/issues"
+  },
+  "homepage": "https://github.com/mmenschig/RunLog#readme"
+}
