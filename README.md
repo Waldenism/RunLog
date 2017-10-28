@@ -1,5 +1,5 @@
 # RunLog
-A running logger built with node.js, express, handlebars, and sequelize
+A running logger built with node.js, express, handlebars, sequelize, bulma
 
 Built in collaboration with
 
@@ -11,3 +11,4 @@ A live demo can be viewed [here](http://www.google.com)
 
 
 This project is released under the MIT License.
+
