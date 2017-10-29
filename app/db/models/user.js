@@ -47,16 +47,6 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: [1]
       }
-    },
-
-    age: {
-      type: DataTypes.TINYINT,
-      allowNull: true
-    },
-
-    gender: {
-      type: DataTypes.BOOLEAN,
-      allowNull: true
     }
     
   },
