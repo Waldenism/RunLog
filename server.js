@@ -9,7 +9,6 @@ let handlebars = require('express-handlebars').create(
   });
 
 
-
 let app = express();
 
 
@@ -30,7 +29,6 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
-// Import routes
 // require("./app/controllers/auth.js")(app);
 require("./app/controllers/main.js")(app);
 
