@@ -1,8 +1,15 @@
 module.exports = function(sequelize, DataTypes) {
   let Athlete = sequelize.define("athlete", {
     
+    athlete_id: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false
+    },
+
     first_name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(25),
       allowNull: false,
       validate: {
         len: [1]
@@ -10,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     last_name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(64),
       allowNull: false,
       validate: {
         len: [1]
@@ -27,7 +34,13 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
     
+  },
+
+  {
+    underscored: true
   });
+
+  Athlete.sync()
 
   return Athlete;
 
