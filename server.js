@@ -2,7 +2,7 @@ let path = require('path');
 let express = require("express");
 let bodyParser = require("body-parser");
 let handlebars = require('express-handlebars').create(
-  {  
+  {
     extname         : '.hbs',
     defaultLayout   : 'main',
     layoutsDir      : 'app/views/layouts'
