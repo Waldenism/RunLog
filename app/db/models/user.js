@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  let User = sequelize.define("user", {
+  let User = sequelize.define("User", {
     
     user_id: {
       type: DataTypes.INTEGER.UNSIGNED,
@@ -54,8 +54,5 @@ module.exports = function(sequelize, DataTypes) {
   {
     underscored: true
   });
-
-  User.sync()
-
   return User
 };

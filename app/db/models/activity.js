@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  let Activity = sequelize.define("activity", {
+  let Activity = sequelize.define("Activity", {
     
     activity_id: {
       type: DataTypes.INTEGER.UNSIGNED,
@@ -27,9 +27,6 @@ module.exports = function(sequelize, DataTypes) {
   {
     underscored: true
   });
-
-  Activity.sync()
-
   return Activity;
 
 };
