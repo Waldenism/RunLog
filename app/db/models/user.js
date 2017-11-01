@@ -27,10 +27,10 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
 
-
     user_role: {
-      type: DataTypes.TINYINT.UNSIGNED,
-      allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'athlete'
     },
 
     first_name: {
