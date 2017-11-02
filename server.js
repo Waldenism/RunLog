@@ -29,7 +29,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
-// require("./app/controllers/auth.js")(app);
+require("./app/controllers/auth.js")(app);
 require("./app/controllers/main.js")(app);
 
 app.listen(app.get('port'), function() {
