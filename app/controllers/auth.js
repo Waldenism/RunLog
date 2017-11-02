@@ -10,6 +10,14 @@ module.exports = function(app) {
     res.render('auth/register');
   })
 
+  app.get('/createteam', function(req, res) {
+    res.render('layouts/createTeam');
+  });
+
+  app.get('/createrunner', function(req, res){
+    res.render('layouts/createRunner');
+  });
+
   app.post('/login', function(req, res){
     console.log(req.body);
     // tests to test the functionality of the login
@@ -37,7 +45,7 @@ module.exports = function(app) {
 
   //test to see if login redirects to a new page
   app.get('/runner/:runner', function(req, res){
-    res.render('auth/register');
+    res.render('layouts/runHistory');
   });
   // end test
 
