@@ -1,30 +1,41 @@
+
 module.exports = function(sequelize, DataTypes) {
   let Activity = sequelize.define("Activity", {
-    
+
     activity_id: {
       type: DataTypes.INTEGER.UNSIGNED,
-      autoIncrement: true,
       primaryKey: true,
-      allowNull: false
-    },
-
-    athlete_id: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false
+      allowNull: false,
+      autoIncrement: true
     },
 
     activity_type: {
-      type: DataTypes.STRING(64),
+      type: DataTypes.STRING,
       defaultValue: 'run',
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      allowNull: false
+    },
+    // All distances are kilometers
+    distance: {
+      type: DataTypes.FLOAT.UNSIGNED,
+      defaultValue: 0.00
+    },
+
+    creation_date: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP()')
+    },
+
+    object_version: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()')
     }
-    
+    // TODO: create references
   },
   {
-    underscored: true
-  });
+    timestamps: false,
+    underscored: true,
+    freezeTableName: true,
+    tableName: 'activities'
+  })
   return Activity;
-};
+}
