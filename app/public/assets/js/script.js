@@ -13,6 +13,7 @@ $(function(){
       user_name: $('#loginUsername').val().trim(),
       password_hash: $('#loginPassword').val().trim()
     };
+    console.log(loginInfo);
     //save login in localStorage if 'Remember me' checked;
     if($('#rememberCheckbox').prop('checked')){
       localStorage.setItem('runLogSavedUser', JSON.stringify(loginInfo));
