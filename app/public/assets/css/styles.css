@@ -1,0 +1,78 @@
+
+.UCBE_logo {
+	max-width: 139px;
+	max-height: 139px;
+}
+
+body {
+	background-color: rgb(7, 71, 119);
+	/*background-color: navy;	*/
+	
+}
+
+#yello {
+	/*font-family: 'Walter Turncoat', cursive;*/
+	/*font-family: 'Julee', cursive;*/
+	font-size: 5.5em;
+	color:gold;
+	letter-spacing: 2px;
+	/*border-bottom: solid gold 2px;*/
+	/*text-decoration: underline;*/
+	/*margin-left: -25px;*/
+}
+
+#yello.space:after {
+  content: " ";
+  white-space: pre;
+}
+
+.golder {
+	color:gold !important;
+}
+
+.banner {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+label {
+		color:gold;
+}
+
+.myForm {
+	margin-top: -66px;
+	/*border-top: solid gold 2px;*/
+}
+
+.myColumn {
+
+}
+
+.myBorder {
+	border-bottom: solid gold 2px;
+}
+
+#logEntries {
+	border: solid blue 1px;
+	background-color: gray;
+}
+
+/*=========================================*/
+/*MEDIA QUERIES */
+/*===========================================*/
+@media screen and (max-width: 640px) {
+	#yello {
+		font-size: 3em;
+	}
+
+	input.input textarea.textarea {
+		margin:0 auto;
+		width: 85%;
+	}
+
+	.myColumn {
+		display: flex;
+		flex-direction: column;
+	}
+}
