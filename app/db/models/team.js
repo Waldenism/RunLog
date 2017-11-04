@@ -1,15 +1,15 @@
 
 module.exports = function(sequelize, DataTypes) {
-  let User = sequelize.define("User", {
+  let Team = sequelize.define("Team", {
     
-    user_id: {
+    team_id: {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
 
-    user_name: {
+    team_name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
 
-    user_email: {
+    team_coach: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -35,12 +35,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TINYINT,
       allowNull: false
     },
-    // Setting up foreign key
-    team_id: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      defaultValue: null,
-      allowNull: true
-    },
 
     creation_date: {
       type: DataTypes.DATE,
@@ -51,13 +45,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DATE,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()')
     }
-    // TODO: create references
+    // TODO: create references≈
   },
   {
     underscored: true,
     timestamps: false,
     freezeTableName: true,
-    tableName: 'users'
+    tableName: 'teams'
   });
-  return User;
+  return Team;
 };

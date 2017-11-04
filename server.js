@@ -10,7 +10,7 @@ let handlebars = require('express-handlebars').create(
 
 
 let app = express();
-
+let db = require('./app/db/models');
 
 // set up handlebars view engine
 app.engine('hbs', handlebars.engine);
@@ -32,6 +32,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 require("./app/controllers/auth.js")(app);
 require("./app/controllers/main.js")(app);
 
-app.listen(app.get('port'), function() {
-  console.log(`App listening on PORT ${app.get('port')}`);
-});
+
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(app.get('port'), function() {
+    console.log(`App listening on PORT ${app.get('port')}`);
+  });  
+})

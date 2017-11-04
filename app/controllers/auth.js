@@ -1,17 +1,36 @@
-
+let db = require('../db/models');
+let bcrypt = require('bcrypt');
 
 module.exports = function(app) {
 
   app.get('/login', function(req, res) {
-    res.render('auth/login');
+    res.render('index.hbs');
   })
 
+  // app.post('/login', function(req, res) {
+  //   let email = req.body.email
+  //
+  //   // TODO: hash password and compare with
+  //   // stored hash via email/username retrieval
+  //
+  //   db.User.findOne({
+  //     where: {
+  //       email: email
+  //     }
+  //   })
+  //   .then(function(data) {
+  //     res.redirect('/calendar');
+  //   })
+  // })
+
   app.get('/register', function(req, res) {
-    res.render('layouts/createUser');
+    res.render('createUser');
   })
+
 
   app.post('/login', function(req, res){
     console.log(req.body);
+
     // tests to test the functionality of the login
     for(var i=0; i<testAuth.length; i++){
       //test if user name and password are in test var
@@ -38,17 +57,23 @@ module.exports = function(app) {
   //test posted data from register form.
   app.post('/register', function(req, res){
     var newUser = req.body;
+    console.log(newUser);
+    res.json({status:200});
+    // TODO: store hashed (+salted) password in db and redirect to login
+    res.redirect('/login');
+
+
     //test to see if user is added to tesy var. in the real world this
     //would post to db. testid would be set by db etc.
-    var testid = testAuth.length;
-    newUser.user_id = testid;
-    testAuth.push(newUser);
-    console.log(newUser);
-    console.log(testAuth);
-    var secondTest = testAuth.length+1;
-    if(secondTest > testid){
-      res.json({status:200});
-    }else {res.json({status: 500});}
+    // var testid = testAuth.length;
+    // newUser.user_id = testid;
+    // testAuth.push(newUser);
+    // console.log(newUser);
+    // console.log(testAuth);
+    // var secondTest = testAuth.length+1;
+    // if(secondTest > testid){
+    //   res.json({status:200});
+    // }else {res.json({status: 500});}
   });
 };
 
