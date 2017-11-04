@@ -4,7 +4,9 @@
   "description": "A node.js run logger",
   "main": "server.js",
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "express": "^4.16.2",
+    "express-flash": "0.0.2",
     "express-handlebars": "^3.0.0",
     "mysql2": "^1.4.2",
     "sequelize": "^4.19.0"
