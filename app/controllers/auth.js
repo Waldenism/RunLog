@@ -9,24 +9,32 @@ module.exports = function(app) {
 
   // app.post('/login', function(req, res) {
   //   let email = req.body.email
+  //   let pw = req.body.password
   //
   //   // TODO: hash password and compare with
   //   // stored hash via email/username retrieval
   //
   //   db.User.findOne({
   //     where: {
-  //       email: email
+  //       user_email: email
   //     }
   //   })
   //   .then(function(data) {
-  //     res.redirect('/calendar');
+  //
+  //     bcrypt.compare(pw, data.password_hash, function(err, res) {
+  //       if (res) {
+  //         //
+  //       } else {
+  //         // passwords don't match
+  //       }
+  //     })
+  //
   //   })
   // })
 
   app.get('/register', function(req, res) {
     res.render('createUser');
   })
-
 
   app.post('/login', function(req, res){
     console.log(req.body);
@@ -39,11 +47,12 @@ module.exports = function(app) {
       console.log(data);
       if(data===null) {
         //send 404 back to front end to direct user to register
-        res.json({status: 404, message: "user not found try again or register"});
+        //res.json({status: 404, message: "user not found try again or register"});
+        res.json({userFound: false});
       }
       else{
         // send 200 to user to redirect to run page.
-        res.json({status: 200});
+        res.json({userFound: true, user: data.user_id});
       }
     });
   });

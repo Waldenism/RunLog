@@ -1,28 +1,59 @@
 <section class="section">
-    <div class="container">
-          
-      <table class="table">
+      <div class="container">
+        
+          <div class="space" id="myTitle">
+                  RunLog
+                </div>
+
+          <nav class="level">
+
+            <div class="level-left">
+              <div class="level-item">
+                <p class="subtitle golder">
+                  <!-- {{{ subtitle }}} -->
+                  Activity Archive        
+                </p>
+              </div>
+            </div>
+
+            <div class="level-right">
+              <div class="level-item">
+                <button class="button is-primary is-large logRunBtn">
+                  Log a run
+                </button><span class="space distanceSpace"></span>
+              </div>
+            </div>
+
+          </nav>
+
+      </div>
+    </section>
+
+    <section class="section myForm">
+      <div class="container radius">
+        
+      <table class="table" id="myTable">
         <thead>
           <tr>
-            <th><abbr title="Date">Date</abbr></th>
-            <th><abbr title="Dis">Distance</abbr></th>
-            <th><abbr title="Time">Time</abbr></th>
-            <th><abbr title="Pace">Pace</abbr></th>
-            <th><abbr title="Fl">Feeling</abbr></th>
-            <th><abbr title="Msg">Message</abbr></th>
+            <th><abbr >Date</abbr></th>
+            <th><abbr >Distance</abbr></th>
+            <th><abbr >Time</abbr></th>
+            <th><abbr >Pace</abbr></th>
+            <th><abbr >Feeling</abbr></th>
+            <th><abbr >Message</abbr></th>
           </tr>
         </thead>
-      
+
         <tbody>
           <tr>
-            <td>{{{date}}}</td>
-            <td>{{{distance}}}</td>
-            <td>{{{time}}}</td>
-            <td>{{{pace}}}</td>
-            <td>{{{feeling}}}</td>
-            <td>{{{message}}}</td>
-
+            <td>Nov. 2th</td>
+            <td>3 miles</td>
+            <td>21 min</td>
+            <td>7:00/mile</td>
+            <td>Great</td>
+            <td>Sunny Day</td>
           </tr>
+
           <tr>
             <td>Nov. 3th</td>
             <td>4 miles</td>
@@ -31,6 +62,7 @@
             <td>Great</td>
             <td>So sore!</td>
           </tr>
+
           <tr>
             <td>Nov. 4th</td>
             <td>10 miles</td>
@@ -40,8 +72,17 @@
             <td>It was cold out</td>
           </tr>
 
+          <tr>
+            <td>{{{date}}}</td>
+            <td>{{{distance}}}</td>
+            <td>{{{time}}}</td>
+            <td>{{{pace}}}</td>
+            <td>{{{feeling}}}</td>
+            <td>{{{message}}}</td>
+          </tr>
+
         </tbody>
       </table>
 
-    </div>
-  </section>>
+      </div>
+    </section>

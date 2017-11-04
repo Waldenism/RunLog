@@ -1,3 +1,24 @@
+#myTable {
+	background-color: rgb(34,208,178);
+	/*color:gold !important;*/
+	text-decoration: 
+	/*border-radius:3px;*/
+}
+
+.logRunBtn {
+	background-color: rgb(84,252,251);
+	color: gold !important;
+}
+
+thead {
+	background-color: gold;
+	color: rgb(13,72,117);
+}
+
+.radius{
+	border-radius:3px;
+}
+
 #runDistanceInput {
 	max-width: 150px;
 }

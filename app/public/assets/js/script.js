@@ -24,12 +24,12 @@ $(function(){
     $.post('/login', loginInfo, function(data){
       console.log(data);
       //test to test the successful login form and redirect to new view
-        if(Number(data.status) === 200) {
+        if(data.userFound) {
               window.location.href = '/calendar';
         }
         //if user not found respond with not foun message.
-        if(Number(data.status) === 404) {
-          alert(data.message);
+        else {
+          alert('user not found please register or try again');
           $('#loginUsername').val('');
           $('#loginPassword').val('');
           console.log('login failed for '  + loginInfo.user_name);
