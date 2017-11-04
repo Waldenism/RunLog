@@ -52,9 +52,7 @@ module.exports = function(app) {
   });
 };
 
-app.post('/logrun', function(req, res){
-  
-})
+
 
 //test var
 var testAuth = [

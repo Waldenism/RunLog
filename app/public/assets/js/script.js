@@ -57,31 +57,34 @@ $(function(){
       });
     });
 
-    //if log-run-page is loaded
-
-      var feeling;
-      //listen for an even on the feeling button
-      $('.feeling-button').on('click', function(){
-       feeling = $(this).data('feeling');
-     });
-     //listen for event on lig run button
-     $('#logRunButton').on('click', function(){
-        if(feeling === undefined){
-          alert('please choose how you felt for the run');
+    //if login handlers
+    var feeling;
+    //listen for an even on the feeling button
+    $('.feeling-button').on('click', function(){
+     feeling = $(this).data('feeling');
+   });
+   //listen for event on lig run button
+   $('#logRunButton').on('click', function(){
+      if(feeling === undefined){
+        alert('please choose how you felt for the run');
+      }
+      else{
+        runInfo = {
+          distance: $('#logDistance').val().trim(),
+          time:$('#logTime').val().trim(),
+          feeling: feeling,
+          message: $('#injury').val().trim()
+        };
+      }
+      $.post('/logrun', runInfo, function(data){
+        if(data.status === 200) {
+          console.log('run added');
+          window.location.href = '/calendar';
         }
-        else{
-          runInfo = {
-            distance: $('#logDistance').val().trim(),
-            time:$('#logTime').val().trim(),
-            feeling: feeling,
-            message: $('#injury').val().trim()
-          };
-        }
-        $.post('/logrun', runInfo, function(data){
-          if(data.status === 200) {
-            console.log('run added');
-            window.location.href = '/calendar';
-          }
-        });
       });
+    });
+
+    $('#cancelLogin').on('click', function(){
+      window.location.href = '/';
+    });
 });
