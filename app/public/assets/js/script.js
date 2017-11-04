@@ -24,7 +24,7 @@ $(function(){
       console.log(data);
       //test to test the successful login form and redirect to new view
         if(Number(data.status) === 200) {
-              window.location.href = '/runner/' + data.message;
+              window.location.href = '/calendar/' + data.message;
         }
         //if user not found respond with not foun message.
         if(Number(data.status) === 404) {
@@ -33,6 +33,31 @@ $(function(){
           $('#loginPassword').val('');
           console.log('login failed for '  + loginInfo.user_name);
         }
-      })
+      });
     });
+
+    //register button event handdler
+    $('#registerButton').on('click', function(){
+      var registerInfo = {
+        name: $('#registerName').val().trim(),
+        user_name:$('#registerUserName').val().trim(),
+        email:$('#registerEmail').val().trim(),
+        password_hash:$('#registerPassword').val().trim(),
+        profile_icon:$('#registerIcon').val().trim(),
+      };
+      $.post('/register', registerInfo, function(data){
+        console.log('login data poasted');
+        if(Number(data.status === 200)){
+          window.location.href = '/';
+        }
+        if(Number(data.status === 500)){
+          alert("Something went wrong try to register again please!");
+        }
+      });
+    });
+
+
+    $.get('/activity').done(function(data){
+      console.log(data);
+    })
 });

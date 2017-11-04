@@ -7,16 +7,8 @@ module.exports = function(app) {
   })
 
   app.get('/register', function(req, res) {
-    res.render('auth/register');
+    res.render('layouts/createUser');
   })
-
-  app.get('/createteam', function(req, res) {
-    res.render('layouts/createTeam');
-  });
-
-  app.get('/createrunner', function(req, res){
-    res.render('layouts/createRunner');
-  });
 
   app.post('/login', function(req, res){
     console.log(req.body);
@@ -36,31 +28,44 @@ module.exports = function(app) {
         var userNotFound = {
           status: 404,
           message: "User name or password not found. Please try again or register."
-        }
+        };
         //respond with a user not found message and redirect to try again or login
         res.json(userNotFound);
       }
     }
   });
 
-  //test to see if login redirects to a new page
-  app.get('/runner/:runner', function(req, res){
-    res.render('layouts/runHistory');
+  //test posted data from register form.
+  app.post('/register', function(req, res){
+    var newUser = req.body;
+    //test to see if user is added to tesy var. in the real world this
+    //would post to db. testid would be set by db etc.
+    var testid = testAuth.length;
+    newUser.user_id = testid;
+    testAuth.push(newUser);
+    console.log(newUser);
+    console.log(testAuth);
+    var secondTest = testAuth.length+1;
+    if(secondTest > testid){
+      res.json({status:200});
+    }else {res.json({status: 500});}
   });
-  // end test
-
-}
+};
 
 //test var
 var testAuth = [
   {
     user_id: 1,
+    name: 'mark',
     user_name: 'mark',
+    email: 'mark@mark.mark',
     password_hash: '1111'
   },
   {
     user_id: 2,
+    name: 'chris',
     user_name: 'chris',
+    email: 'chris@chris.chris',
     password_hash: '2222'
   }
 ];
