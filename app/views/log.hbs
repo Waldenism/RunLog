@@ -1,7 +1,7 @@
-<section class="section">
+<section class="section" id="logRunPage">
     <div class="container">
-          
-      <div class="banner"> 
+
+      <div class="banner">
 
         <div class="space" id="yello">
           RunLog
@@ -11,9 +11,9 @@
 
       <p class="subtitle golder">
         <!-- {{{ subtitle }}} -->
-        Tell me about your run.        
+        Tell me about your run.
       </p>
-      
+
     </div>
   </section>
 
@@ -22,12 +22,12 @@
 
   <section class="section myForm">
     <div class="container">
-      
+
       <div class="field">
         <div class="control">
           <label class="label golder">
             How far did you run?
-                      <input class="input" type="text" placeholder="Total Distance">
+                      <input class="input" type="text" placeholder="Total Distance" id='logDistance'>
 
           </label>
 
@@ -37,7 +37,7 @@
       <div class="field">
         <label class="label golder">How long did it take you?</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Time">
+          <input class="input" type="text" placeholder="Time" id='logTime'>
         </div>
       </div>
 
@@ -46,28 +46,28 @@
           <div class="myColumn">
 
             <label class="label golder">How are you feeling?</label>
-            
-            <a class="button is-danger">Danger</a>
-            <a class="button is-warning">Felt bad</a>
-            <a class="button is-success">Felt OK/Off</a>
-            <a class="button is-info">Felt Good</a>
-            <a class="button is-link">Felt Great</a>            
+
+            <a class="button is-danger feeling-button" data-feeling="danger">Danger</a>
+            <a class="button is-warning feeling-button" data-feeling="warning">Felt bad</a>
+            <a class="button is-success feeling-button" data-feeling="success">Felt OK/Off</a>
+            <a class="button is-info feeling-button" data-feeling="info">Felt Good</a>
+            <a class="button is-link feeling-button" data-feeling="link">Felt Great</a>
 
             <br>
 
             <br>
 
-            <textarea class="textarea" placeholder="Are you injured? Is there anything else I should know?"></textarea>
+            <textarea class="textarea" placeholder="Are you injured? Is there anything else I should know?" id='injury'></textarea>
 
           </div>
         </div>
       </div>
 
-      
+
 
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-primary">Submit</button>
+          <button class="button is-primary" id="logRunButton">Submit</button>
         </div>
         <div class="control">
           <button class="button is-light">Cancel</button>

@@ -1,4 +1,5 @@
 $(function(){
+
   //iffy to check localStorage for saved userinfo on page startup.
   (function checkForSavedUser(){
     if(localStorage.getItem('runLogSavedUser')){
@@ -24,7 +25,7 @@ $(function(){
       console.log(data);
       //test to test the successful login form and redirect to new view
         if(Number(data.status) === 200) {
-              window.location.href = '/calendar/' + data.message;
+              window.location.href = '/calendar';
         }
         //if user not found respond with not foun message.
         if(Number(data.status) === 404) {
@@ -56,8 +57,32 @@ $(function(){
       });
     });
 
+    //if log-run-page is loaded
 
-    $.get('/activity').done(function(data){
-      console.log(data);
-    })
+      var feeling;
+      //listen for an even on the feeling button
+      $('.feeling-button').on('click', function(){
+       feeling = $(this).data('feeling');
+     });
+     //listen for event on lig run button
+     $('#logRunButton').on('click', function(){
+        if(feeling === undefined){
+          alert('please choose how you felt for the run');
+        }
+        else{
+          runInfo = {
+            distance: $('#logDistance').val().trim(),
+            time:$('#logTime').val().trim(),
+            feeling: feeling,
+            message: $('#injury').val().trim()
+          };
+        }
+        $.post('/logrun', runInfo, function(data){
+          if(data.status === 200) {
+            console.log('run added');
+            window.location.href = '/calendar';
+          }
+        });
+      });
+
 });
