@@ -9,6 +9,7 @@ module.exports = function(app) {
 
   app.post('/login', function(req, res) {
     let email = req.body.email
+    let pw = req.body.password
 
     // TODO: hash password and compare with 
     // stored hash via email/username retrieval
@@ -19,10 +20,15 @@ module.exports = function(app) {
       }
     })
     .then(function(data) {
-      // if hashed pw = stored hash
-      // create valid session
-      // and redirect to athlete view
-      // else we reload login with express-flash
+      
+      bcrypt.compare(pw, data.password_hash, function(err, res) {
+        if (res) {
+          // password matches
+        } else {
+          // passwords don't match
+        }
+      })
+
     })
   })
 
@@ -31,7 +37,14 @@ module.exports = function(app) {
   })
 
   app.post('/register', function(req, res) {
-    // TODO: store hashed (+salted) password in db and redirect to login
+
+    bcrypt.hash(req.body.password, 10, function(err, hash) {
+      // TODO: store all data in db as new user
+
+      // db.User.create({})
+
+    })
+
     res.redirect('auth/login')
   })
 
