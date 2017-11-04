@@ -1,3 +1,17 @@
+#runDistanceInput {
+	max-width: 150px;
+}
+
+.distanceSpace {
+	/*text-decoration: underline;*/
+
+}
+
+.distanceSpace.space::after {
+	content: "     ";
+	white-space: pre;
+	/*content: "&nbsp;";*/
+}
 
 .UCBE_logo {
 	max-width: 139px;
@@ -10,7 +24,7 @@ body {
 	
 }
 
-#yello {
+#myTitle {
 	/*font-family: 'Walter Turncoat', cursive;*/
 	/*font-family: 'Julee', cursive;*/
 	font-size: 5.5em;
@@ -19,11 +33,6 @@ body {
 	/*border-bottom: solid gold 2px;*/
 	/*text-decoration: underline;*/
 	/*margin-left: -25px;*/
-}
-
-#yello.space:after {
-  content: " ";
-  white-space: pre;
 }
 
 .golder {
