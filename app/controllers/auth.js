@@ -7,35 +7,6 @@ module.exports = function(app) {
     res.render('index.hbs');
   })
 
-  // app.post('/login', function(req, res) {
-  //   let email = req.body.email
-  //   let pw = req.body.password
-  //
-  //   // TODO: hash password and compare with
-  //   // stored hash via email/username retrieval
-  //
-  //   db.User.findOne({
-  //     where: {
-  //       user_email: email
-  //     }
-  //   })
-  //   .then(function(data) {
-  //
-  //     bcrypt.compare(pw, data.password_hash, function(err, res) {
-  //       if (res) {
-  //         //
-  //       } else {
-  //         // passwords don't match
-  //       }
-  //     })
-  //
-  //   })
-  // })
-
-  app.get('/register', function(req, res) {
-    res.render('createUser');
-  })
-
   app.post('/login', function(req, res){
     console.log(req.body);
     let email = req.body.email;
@@ -56,6 +27,10 @@ module.exports = function(app) {
       }
     });
   });
+
+  app.get('/register', function(req, res) {
+    res.render('createUser');
+  })
 
   //test posted data from register form.
   app.post('/register', function(req, res){
