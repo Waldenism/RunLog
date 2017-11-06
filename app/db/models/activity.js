@@ -25,10 +25,10 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP()')
     },
 
-    object_version: {
-      type: DataTypes.DATE,
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()')
-    }
+    // object_version: {
+    //   type: DataTypes.DATE,
+    //   defaultValue: sequelize.literal('CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()')
+    // }
     // TODO: create references
   },
   {

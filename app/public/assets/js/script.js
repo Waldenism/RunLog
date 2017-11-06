@@ -1,17 +1,25 @@
 $(function(){
-
+  var appData= {
+    userId: '',
+    feeling: ''
+  };
   //iffy to check localStorage for saved userinfo on page startup.
   (function checkForSavedUser(){
     if(localStorage.getItem('runLogSavedUser')){
       var user = JSON.parse(localStorage.getItem('runLogSavedUser'));
-      $('#loginUsername').val(user.user_name);
+      $('#loginUsername').val(user.user_email);
       $('#loginPassword').val(user.password_hash);
     }
   })();
+  // handle request to '/'
+  $.get('/').done(function(data){
+
+  });
+
   //login button event handdler
   $('#loginButton').on('click', function(){
     var loginInfo = {
-      user_name: $('#loginUsername').val().trim(),
+      user_email: $('#loginUsername').val().trim(),
       password_hash: $('#loginPassword').val().trim()
     };
     console.log(loginInfo);
@@ -22,69 +30,59 @@ $(function(){
     }
     //login ajax
     $.post('/login', loginInfo, function(data){
-      console.log(data);
-      //test to test the successful login form and redirect to new view
-        if(data.userFound) {
-              window.location.href = '/calendar';
-        }
-        //if user not found respond with not foun message.
-        else {
-          alert('user not found please register or try again');
-          $('#loginUsername').val('');
-          $('#loginPassword').val('');
-          console.log('login failed for '  + loginInfo.user_name);
-        }
-      });
-    });
+      appData.userId = data.user;
+      console.log(appData.userId);
+      window.location.href = data.redirect;
+    })
+  });
 
-    //register button event handdler
-    $('#registerButton').on('click', function(){
-      var registerInfo = {
-        name: $('#registerName').val().trim(),
-        user_name:$('#registerUserName').val().trim(),
-        email:$('#registerEmail').val().trim(),
-        password_hash:$('#registerPassword').val().trim(),
-        profile_icon:$('#registerIcon').val().trim(),
+  //register button event handdler
+  $('#registerButton').on('click', function(){
+    var registerInfo = {
+      name: $('#registerName').val().trim(),
+      user_name:$('#registerUserName').val().trim(),
+      user_email:$('#registerEmail').val().trim(),
+      password_hash:$('#registerPassword').val().trim(),
+      profile_icon:$('#registerIcon').val().trim(),
+      user_type: 0
+    };
+    $.post('/register', registerInfo, function(data){
+      console.log('login data poasted');
+      window.location.href = data.redirect;
+    });
+  });
+
+  $('#logRunBtn').on('click', function(){
+    console.log(appData.userId);
+    window.location.href = '/logrun';
+  })
+
+  //listen for an event on the feeling button
+  $('.feeling-button').on('click', function(){
+   appData.feeling = $(this).data('feeling');
+ });
+
+ //listen for event on lig run button
+ $('#submitRun').on('click', function(){
+    if(appData.feeling === undefined){
+      alert('please choose how you felt for the run');
+    }
+    else{
+      runInfo = {
+        user:appData.userId,
+        distance: $('#logDistance').val().trim(),
+        time:$('#logTime').val().trim(),
+        feeling: appData.feeling,
+        message: $('#injury').val().trim()
       };
-      $.post('/register', registerInfo, function(data){
-        console.log('login data poasted');
-        if(Number(data.status === 200)){
-          window.location.href = '/';
-        }
-        if(Number(data.status === 500)){
-          alert("Something went wrong try to register again please!");
-        }
-      });
+    }
+    $.post('/logrun', runInfo, function(data){
+      console.log(data.redirect);
+      window.location.href = '/index';
     });
+  });
 
-    //if login handlers
-    var feeling;
-    //listen for an even on the feeling button
-    $('.feeling-button').on('click', function(){
-     feeling = $(this).data('feeling');
-   });
-   //listen for event on lig run button
-   $('#logRunButton').on('click', function(){
-      if(feeling === undefined){
-        alert('please choose how you felt for the run');
-      }
-      else{
-        runInfo = {
-          distance: $('#logDistance').val().trim(),
-          time:$('#logTime').val().trim(),
-          feeling: feeling,
-          message: $('#injury').val().trim()
-        };
-      }
-      $.post('/logrun', runInfo, function(data){
-        if(data.status === 200) {
-          console.log('run added');
-          window.location.href = '/calendar';
-        }
-      });
-    });
-
-    $('#cancelLogin').on('click', function(){
-      window.location.href = '/';
-    });
+  $('#cancelLogin').on('click', function(){
+    window.location.href = '/';
+  });
 });

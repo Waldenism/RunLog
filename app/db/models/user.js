@@ -1,7 +1,7 @@
 
 module.exports = function(sequelize, DataTypes) {
   let User = sequelize.define("User", {
-    
+
     user_id: {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
@@ -47,10 +47,10 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP()')
     },
 
-    object_version: {
-      type: DataTypes.DATE,
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()')
-    }
+    // object_version: {
+    //   type: DataTypes.DATE,
+    //   defaultValue: sequelize.literal('CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()')
+    // }
     // TODO: create references
   },
   {
