@@ -1,13 +1,21 @@
 let db = require('../db/models');
 
 module.exports = function(app) {
+  let user = '';
 
-  app.get('/', function(req, res) {
+  app.get('/', function(req,res) {
     res.render('index');
-  });
+  })
 
-  app.get('/calendar', function(req,res){
-    res.render('tableView.hbs');
+  app.get('/index/:id?', function(req, res) {
+    var id = req.params.id
+    user = id;
+    if(!id){
+      res.redirect('/login');
+    }
+    else{
+      res.render('index.hbs');
+    }
   });
 
   app.get('/logrun', function(req, res) {
@@ -16,7 +24,8 @@ module.exports = function(app) {
 
   app.post('/logrun', function(req,res){
     var newRun = req.body;
+    var id = req.body.user;
     console.log(newRun);
-    res.json({status: 200});
+    res.json({redirect:'index/'+ user});
   });
 }

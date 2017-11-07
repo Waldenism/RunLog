@@ -1,7 +1,7 @@
 
 module.exports = function(sequelize, DataTypes) {
   let Team = sequelize.define("Team", {
-    
+
     team_id: {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,

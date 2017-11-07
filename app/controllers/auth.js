@@ -4,26 +4,21 @@ let bcrypt = require('bcrypt');
 module.exports = function(app) {
 
   app.get('/login', function(req, res) {
-    res.render('index.hbs');
+    res.render('auth/login.hbs');
   })
 
   app.post('/login', function(req, res){
-    console.log(req.body);
-    let email = req.body.email;
+    let email = req.body.user_email;
     db.User.findOne({
       where:{
         user_email: email
       }
     }).then(function(data) {
-      console.log(data);
-      if(data===null) {
-        //send 404 back to front end to direct user to register
-        //res.json({status: 404, message: "user not found try again or register"});
-        res.json({userFound: false});
+      if(!data) {
+        res.json({redirect: '/login'});
       }
       else{
-        // send 200 to user to redirect to run page.
-        res.json({userFound: true, user: data.user_id});
+        res.json({user: data.user_id, redirect: '/index/'+ data.user_id});
       }
     });
   });
@@ -32,12 +27,12 @@ module.exports = function(app) {
     res.render('createUser');
   })
 
-  //test posted data from register form.
+  //post data from register form.
   app.post('/register', function(req, res){
     var newUser = req.body;
-    console.log(newUser);
-    res.json({status:200});
+    db.User.create(req.body).then(function(data){
+      res.json({redirect: '/login'});
+    })
     // TODO: store hashed (+salted) password in db and redirect to login
-    res.redirect('/login');
   });
 };
