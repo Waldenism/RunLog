@@ -14,7 +14,7 @@ module.exports = function(app) {
         user_email: email
       }
     }).then(function(data) {
-      if(data === null) {
+      if(!data) {
         res.json({redirect: '/login'});
       }
       else{
