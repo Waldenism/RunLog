@@ -42,6 +42,7 @@ thead {
 body {
 	background-color: rgb(7, 71, 119);
 	/*background-color: navy;	*/
+	height: 100%;
 
 }
 
@@ -57,21 +58,35 @@ body {
 }
 
 .golder {
+	color:navy !important;
+}
+
+.goldest {
 	color:gold !important;
 }
 
 .banner {
+	border-bottom: solid 3px gold;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
 }
 
-label {
-		color:gold;
+#content {
+	display: flex;
+	margin: 0 auto;
+	flex-direction: row;
+	padding-left: 5%;
+	padding-right: 5%;
+	background-color: white;
+}
+
+#content input {
+	max-width: 300px;
 }
 
 .myForm {
-	margin-top: -66px;
+	margin-top: -30px;
 	/*border-top: solid gold 2px;*/
 }
 
@@ -88,9 +103,10 @@ label {
 	background-color: gray;
 }
 
-html, body {
+html {
   height: 100%;
 }
+
 .splash-page {
 
   background-image: url('../images/dev-dodia-327647.jpg');
@@ -107,7 +123,7 @@ html, body {
 /*MEDIA QUERIES */
 /*===========================================*/
 @media screen and (max-width: 640px) {
-	#yello {
+	#myTitle {
 		font-size: 3em;
 	}
 
