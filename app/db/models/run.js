@@ -1,21 +1,16 @@
 
 module.exports = function(sequelize, DataTypes) {
-  let Activity = sequelize.define("Activity", {
+  let Run = sequelize.define("Run", {
 
-    activity_id: {
+    run_id: {
       type: DataTypes.INTEGER.UNSIGNED,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true
     },
 
-    activity_type: {
-      type: DataTypes.STRING,
-      defaultValue: 'run',
-      allowNull: false
-    },
     // All distances are kilometers
-    distance: {
+    run_distance: {
       type: DataTypes.FLOAT.UNSIGNED,
       defaultValue: 0.00
     },
@@ -23,19 +18,21 @@ module.exports = function(sequelize, DataTypes) {
     creation_date: {
       type: DataTypes.DATE,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP()')
-    },
-
-    // object_version: {
-    //   type: DataTypes.DATE,
-    //   defaultValue: sequelize.literal('CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()')
-    // }
-    // TODO: create references
+    }
   },
   {
     timestamps: false,
     underscored: true,
     freezeTableName: true,
-    tableName: 'activities'
+    tableName: 'runs'
   })
-  return Activity;
+  
+  Run.associate = function(models) {
+    Run.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+  return Run;
 }
