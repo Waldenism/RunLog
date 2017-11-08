@@ -17,6 +17,14 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
 
+    user_alias: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+
     user_email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -31,27 +39,13 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
 
-    user_type: {
-      type: DataTypes.TINYINT,
-      allowNull: false
-    },
-    // Setting up foreign key
-    team_id: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      defaultValue: null,
-      allowNull: true
-    },
 
     creation_date: {
       type: DataTypes.DATE,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP()')
-    },
-
-    object_version: {
-      type: DataTypes.DATE,
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()')
     }
-    // TODO: create references
+
+    // Reference to runs
   },
   {
     underscored: true,
