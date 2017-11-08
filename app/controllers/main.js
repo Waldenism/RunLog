@@ -4,7 +4,7 @@ module.exports = function(app) {
   let user = '';
 
   app.get('/', function(req,res) {
-    res.render('index');
+    res.render('calendarView.hbs');
   })
 
   app.get('/index/:id?', function(req, res) {
