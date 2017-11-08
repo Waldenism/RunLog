@@ -14,7 +14,7 @@ module.exports = function(app) {
       res.redirect('/login');
     }
     else{
-      res.render('index.hbs');
+      res.render('calendarView.hbs');
     }
   });
 
