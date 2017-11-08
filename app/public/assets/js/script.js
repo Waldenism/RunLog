@@ -93,15 +93,17 @@ $(function(){
     else{
       runInfo = {
         user:appData.userId,
+        year: $('#logTimeYear').val(),
+        month: $('#logTimeMonth').val().trim(),
+        day: $('#logTimeDay').val().trim(),
         distance: $('#logDistance').val().trim(),
         time:$('#logTime').val().trim(),
-        feeling: appData.feeling,
-        message: $('#injury').val().trim()
       };
+      console.log("date data" + runInfo.year);
     }
     $.post('/logrun', runInfo, function(data){
       console.log(data.redirect);
-      window.location.href = '/index';
+      window.location.href = '/calendar';
     });
   });
 

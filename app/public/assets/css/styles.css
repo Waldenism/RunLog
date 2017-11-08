@@ -1,8 +1,6 @@
 #myTable {
 	background-color: rgb(34,208,178);
-	/*color:gold !important;*/
 	text-decoration: 
-	/*border-radius:3px;*/
 }
 
 .logRunBtn {
@@ -11,8 +9,7 @@
 }
 
 thead {
-/*	background-color: gold;
-*/	color: rgb(13,72,117);
+	color: rgb(13,72,117);
 }
 
 #chrisNav {
@@ -48,26 +45,16 @@ thead {
 }
 
 .distanceSpace {
-	/*text-decoration: underline;*/
 
 }
 
 .distanceSpace.space::after {
 	content: "     ";
 	white-space: pre;
-	/*content: "&nbsp;";*/
-}
-
-.UCBE_logo {
-	max-width: 139px;
-	max-height: 139px;
 }
 
 body {
-	/*background-color: rgb(7, 71, 119);*/
-	/*background-color: navy;	*/
 	height: 100%;
-
 }
 
 #calTitle {
@@ -75,22 +62,9 @@ body {
 }
 
 #myTitle {
-	/*font-family: 'Walter Turncoat', cursive;*/
-	/*font-family: 'Julee', cursive;*/
 	font-size: 3em;
 	color:gold;
 	letter-spacing: 2px;
-	/*border-bottom: solid gold 2px;*/
-	/*text-decoration: underline;*/
-	/*margin-left: -25px;*/
-}
-
-.golder {
-	color:navy !important;
-}
-
-.goldest {
-	color:gold !important;
 }
 
 .banner {
@@ -115,7 +89,6 @@ body {
 
 .myForm {
 	margin-top: -30px;
-	/*border-top: solid gold 2px;*/
 }
 
 #forcePosition {
