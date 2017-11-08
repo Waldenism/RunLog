@@ -52,23 +52,16 @@ $(function(){
     });
   });
 
-<<<<<<< HEAD
   $('#logRunBtn').on('click', function(){
     console.log(appData.userId);
     window.location.href = '/logrun';
   })
-
+  
   //listen for an event on the feeling button
   $('.feeling-button').on('click', function(){
    appData.feeling = $(this).data('feeling');
  });
-=======
-    //if login handlers
-    var feeling;
-    //listen for an even on the feeling button
-    $('.feeling-button').on('click', function(){
-     feeling = $(this).data('feeling');
-   });
+
    //listen for event on lig run button
    $('#logRunButton').on('click', function(){
       if(feeling === undefined){
@@ -80,17 +73,7 @@ $(function(){
           time:$('#logTime').val().trim(),
           feeling: feeling,
           message: $('#injury').val().trim()
-          //releverage for fullcalendar.io EventData format
-          // {
-          //   id: ??
-          //   backgroundColor: @@bluma is-buttons color@@
-          //   title: '',
-          //   editable: true
-          //   start: @@date@@
-          //   distance:
-          //   time:
-          //   message:
-          // }
+         
 
         };
       }
@@ -101,7 +84,6 @@ $(function(){
         }
       });
     });
->>>>>>> design_v1
 
  //listen for event on lig run button
  $('#submitRun').on('click', function(){
