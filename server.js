@@ -33,7 +33,7 @@ require("./app/controllers/auth.js")(app);
 require("./app/controllers/main.js")(app);
 
 
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync().then(function() {
   app.listen(app.get('port'), function() {
     console.log(`App listening on PORT ${app.get('port')}`);
   });  
