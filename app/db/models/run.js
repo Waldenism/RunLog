@@ -15,6 +15,11 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: 0.00
     },
 
+    run_date: {
+      type: DataTypes.DATEONLY,
+      allowNull: false
+    },
+
     creation_date: {
       type: DataTypes.DATE,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP()')
