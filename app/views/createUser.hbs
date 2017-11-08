@@ -2,106 +2,55 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <div class="column is-4-desktop is-offset-4-desktop">
-
-        <div class='box' id="forcePosition">
-
-          <!-- code -->
-
-            <section class=" banner">
-                <div class="container">
-
-                    <!-- <div> -->
-
-                        <div id="">
-                            RunLog
-                        </div>
-
-                    <!-- </div> -->
-
-                    <p class="subtitle">
-                        Create Account
-                    </p>
-
-                </div>
-            </section>
-
-
-            <!-- form -->
-
-            <div id="content">
-
-                <section class="section myForm">
-                    <!-- <div class="container"> -->
-
-                        <div class="field">
-                            <label class="label golder">Name</label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="" id="registerName">
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label golder">Username</label>
-                            <div class="control has-icons-left has-icons-right">
-                                <input class="input" type="text" placeholder="" id="registerUserName">
-                                <span class="icon is-small is-left">
-                                    <i class="fa fa-user"></i>
-                                </span>
-                                <span class="icon is-small is-right">
-                                </span>
-                            </div>
-
-                        </div>
-
-                        <div class="field">
-
-                            <label class="label golder">Email</label>
-                            <div class="control has-icons-left has-icons-right">
-                                <input class="input" type="email" placeholder="" value="" id="registerEmail">
-                                <span class="icon is-small is-left">
-                                    <i class="fa fa-envelope"></i>
-                                </span>
-                                <span class="icon is-small is-right">
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label golder">Password</label>
-                            <div class="control has-icons-left has-icons-right">
-                                <input class="input" type="password" placeholder="" value="" id="registerPassword">
-                                <span class="icon is-small is-left">
-                                    <i class="fa fa-cog"></i>
-                                </span>
-                                <span class="icon is-small is-right">
-                                </span>
-                            </div>
-
-                        </div>                        
-
-                        <div class="field is-grouped">
-                            <div class="control">
-                                <button class="button is-link" id="registerButton">Submit</button>
-                            </div>
-                            
-                            <div class="control golder">
-                                <a href="/"><button class="button is-light">Cancel</button></a>
-                            </div>
-                        </div>
-                        
-                    <!-- </div> -->
-                </section>
+        <div class='box'>
+          <h3 class="title has-text-grey">RunLog</h3>
+          <p class="subtitle has-text-grey">Create Account</p>
+          <hr />
+          
+          <form>
+            <div class="field">
+              <div class="control">
+                <label for="name">Name
+                  <input type="text" id="registerName" class="input is-large"/>
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <label for="inputPassword">Username
+                  <input type="text" id="registerUserName" class="input is-large" />
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <label for="inputPassword">Password
+                  <input type="password" id="registerPassword" class="input is-large" />
+                </label>
+              </div>
             </div>
 
-          <!-- code -->
+            <div class="field">
+              <div class="control">
+                <label for="email">Email
+                  <input type="password" id="registerEmail" class="input is-large" />
+                </label>
+              </div>
+            </div>
 
-        </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link" id="registerButton">Submit</button>
+                </div>
+                
+                <div class="control">
+                    <a href="/"><button class="button is-light">Cancel</button></a>
+                </div>
+            </div>
+          </form>
 
       </div>
     </div>
   </div>
 </section>
-
-
-
-
