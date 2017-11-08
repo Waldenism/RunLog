@@ -26,5 +26,13 @@ module.exports = function(sequelize, DataTypes) {
     freezeTableName: true,
     tableName: 'runs'
   })
+  
+  Run.associate = function(models) {
+    Run.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Run;
 }
