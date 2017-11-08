@@ -74,6 +74,18 @@ $(function(){
           time:$('#logTime').val().trim(),
           feeling: feeling,
           message: $('#injury').val().trim()
+          //releverage for fullcalendar.io EventData format
+          // {
+          //   id: ??
+          //   backgroundColor: @@bluma is-buttons color@@
+          //   title: '',
+          //   editable: true
+          //   start: @@date@@
+          //   distance:
+          //   time:
+          //   message:
+          // }
+
         };
       }
       $.post('/logrun', runInfo, function(data){

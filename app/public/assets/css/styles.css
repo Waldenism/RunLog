@@ -11,8 +11,8 @@
 }
 
 thead {
-	background-color: gold;
-	color: rgb(13,72,117);
+/*	background-color: gold;
+*/	color: rgb(13,72,117);
 }
 
 .radius{
@@ -40,7 +40,7 @@ thead {
 }
 
 body {
-	background-color: rgb(7, 71, 119);
+	/*background-color: rgb(7, 71, 119);*/
 	/*background-color: navy;	*/
 	height: 100%;
 

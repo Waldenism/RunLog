@@ -1,130 +1,38 @@
-<br>
-    <br>
+<section class="section">
+  <div class="container">
+        
+    <div > 
 
-    <!-- <section class="section"> -->
-      <div class="container myBorder">
-        <nav class="level">
-          <div class="level-item has-text-centered">
-            <p class="heading golder">Previous Week</p>
-          </div>
-          <div class="level-item has-text-centered">
-          <div>
-            <p class="heading golder">Next Week</p>
-            <p class="title"></p>
-          </div>
-        </div>
-        </nav>
-            <br>
-      </div>
-    <!-- </section> -->
-
-
-    <section class="section">
-      <div class="container">
-
-        <nav class="level">
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading golder">monday</p>
-            <p class="title"></p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading golder">tuesday</p>
-            <p class="title"></p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading golder">wednesday</p>
-            <p class="title"></p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading golder">thursday</p>
-            <p class="title"></p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading golder">friday</p>
-            <p class="title"></p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading golder">saturday</p>
-            <p class="title"></p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading golder">sunday</p>
-            <p class="title"></p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading golder">total</p>
-            <p class="title"></p>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </section>
-
-  <section class="section">
-      <div class="container">
-
-       <!--  <nav class="level" id="logEntries">
-        <div class="level-item has-text-centered">
-          <div>
-            5, 35:00, great.
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            5, 35:00, great.
-
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            5, 35:00, great.
-
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            5, 35:00, great.
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            5, 35:00, great.
-
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            5, 35:00, great.
-
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            5, 35:00, great.
-
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            5, 35:00, great
-          </div>
-        </div>
-      </nav> -->
+      <h1 >
+        RunLog
+      </h1>
 
     </div>
-  </section>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div id='calendar'></div>
+  </div>  
+</section>
+
+<script type="text/javascript">
+        $(document).ready(function() {
+
+            // page is now ready, initialize the calendar...
+
+            $('#calendar').fullCalendar({
+                // put your options and callbacks here
+                header: {
+                    left:   'title',
+                    center: '',
+                    right:  'listWeek listMonth basicDay,basicWeek,month prev,next'
+                }
+                
+            });
+
+        });
+    </script>

@@ -6,8 +6,12 @@ module.exports = function(app) {
     res.render('index');
   });
 
-  app.get('/calendar', function(req,res){
+  app.get('/table', function(req,res){
     res.render('tableView.hbs');
+  });
+
+  app.get('/calendar', function(req, res) {
+    res.render('calendarView.hbs');
   });
 
   app.get('/logrun', function(req, res) {
