@@ -1,16 +1,25 @@
 <section class="section">
-  <div class="container">
-        
-    <div > 
+        <div class="container">
 
-      <h1 >
-        RunLog
-      </h1>
+           <div id="headflex">
 
-    </div>
-    
-  </div>
-</section>
+            <div>
+              <h1>RunLog</h1>
+            </div>
+
+            <div id="chrisNav">
+
+              <div id="navitem"> Welcome {{!-- ??? --}} {{{this.user}}} </div>
+
+              <div> | </div>
+
+              <div id="navitem"> <a href=""> Logout </a> </div>
+
+            </div>
+          </div>
+          
+        </div>
+    </section>
 
 
 <section class="section">
@@ -27,10 +36,36 @@
             $('#calendar').fullCalendar({
                 // put your options and callbacks here
                 header: {
-                    left:   'title',
-                    center: '',
-                    right:  'listWeek listMonth basicDay,basicWeek,month prev,next'
+            left:   'title',
+            center: '',
+            right:  'listWeek listMonth basicDay,basicWeek,month prev,next'
+              },
+              events: [
+                {
+                    title: '10 miles',
+                    start: '2017-11-05',
+                    backgroundColor: 'gold'
+                }, {
+                  title: '5 miles',
+                  start: '2017-11-06',
+                }, {
+                  title: '3 miles',
+                  start: '2017-11-07',
+                }, {
+                  title: '4 miles',
+                  start: '2017-11-08',
+                }, {
+                  title: '6 miles',
+                  start: '2017-11-09',
+                }, {
+                  title: '3 miles',
+                  start: '2017-11-10',
+                }, {
+                  title: '5 miles',
+                  start: '2017-11-11',
                 }
+
+              ]
                 
             });
 
