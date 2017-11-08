@@ -70,10 +70,14 @@ body {
 
 }
 
+#calTitle {
+	font-size: 5em;
+}
+
 #myTitle {
 	/*font-family: 'Walter Turncoat', cursive;*/
 	/*font-family: 'Julee', cursive;*/
-	font-size: 5.5em;
+	font-size: 3em;
 	color:gold;
 	letter-spacing: 2px;
 	/*border-bottom: solid gold 2px;*/
@@ -112,6 +116,10 @@ body {
 .myForm {
 	margin-top: -30px;
 	/*border-top: solid gold 2px;*/
+}
+
+#forcePosition {
+	margin-top: -80px;
 }
 
 .myColumn {
