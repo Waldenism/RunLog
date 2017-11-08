@@ -16,6 +16,10 @@ module.exports = function(app) {
     else{
       res.render('index.hbs');
     }
+
+
+  app.get('/calendar', function(req, res) {
+    res.render('calendarView.hbs');
   });
 
   app.get('/logrun', function(req, res) {

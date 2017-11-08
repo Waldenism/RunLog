@@ -52,6 +52,7 @@ $(function(){
     });
   });
 
+<<<<<<< HEAD
   $('#logRunBtn').on('click', function(){
     console.log(appData.userId);
     window.location.href = '/logrun';
@@ -61,6 +62,46 @@ $(function(){
   $('.feeling-button').on('click', function(){
    appData.feeling = $(this).data('feeling');
  });
+=======
+    //if login handlers
+    var feeling;
+    //listen for an even on the feeling button
+    $('.feeling-button').on('click', function(){
+     feeling = $(this).data('feeling');
+   });
+   //listen for event on lig run button
+   $('#logRunButton').on('click', function(){
+      if(feeling === undefined){
+        alert('please choose how you felt for the run');
+      }
+      else{
+        runInfo = {
+          distance: $('#logDistance').val().trim(),
+          time:$('#logTime').val().trim(),
+          feeling: feeling,
+          message: $('#injury').val().trim()
+          //releverage for fullcalendar.io EventData format
+          // {
+          //   id: ??
+          //   backgroundColor: @@bluma is-buttons color@@
+          //   title: '',
+          //   editable: true
+          //   start: @@date@@
+          //   distance:
+          //   time:
+          //   message:
+          // }
+
+        };
+      }
+      $.post('/logrun', runInfo, function(data){
+        if(data.status === 200) {
+          console.log('run added');
+          window.location.href = '/calendar';
+        }
+      });
+    });
+>>>>>>> design_v1
 
  //listen for event on lig run button
  $('#submitRun').on('click', function(){

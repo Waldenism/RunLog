@@ -1,124 +1,133 @@
- <section class="section">
-    <div class="container">
 
-      <div class="banner">
+<!-- {{!-- <h1>Create layout here</h1> --}} -->
 
-        <div class="space" id="myTitle">
-          RunLog
-        </div>
+<section class="hero is-light is-fullheight splash-page">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-4-desktop is-offset-4-desktop">
+        <!-- <div class='box'> -->
+
+          <!-- code -->
+
+            <section class="section banner">
+                <div class="container">
+
+                    <!-- <div> -->
+
+                        <div class="space" id="myTitle">
+                            RunLog
+                        </div>
+
+                    <!-- </div> -->
+
+                    <p class="subtitle goldest  ">
+                        Create an account and get logging with RunLog!
+                    </p>
+
+                </div>
+            </section>
+
+
+            <!-- form -->
+
+            <div id="content">
+
+                <section class="section myForm">
+                    <!-- <div class="container"> -->
+
+                        <div class="field">
+                            <label class="label golder">Name</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Name" id="registerName">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label golder">Username</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="text" placeholder="Username" id="registerUserName">
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="field">
+
+                            <label class="label golder">Email</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="email" placeholder="Email input" value="" id="registerEmail">
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label golder">Password</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="password" placeholder="must be at least 8 characters" value="" id="registerPassword">
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-cog"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="field">
+                            <label class="label golder">Profile Icon</label>
+                            <div class="file">
+                                <label class="file-label">
+                                    <input class="file-input" type="file" name="profile-icon" id="registerIcon">
+                                    <span class="file-cta">
+                                        <span class="file-icon">
+                                            <i class="fa fa-upload"></i>
+                                        </span>
+                                        <span class="file-label">
+                                        Choose a file…
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label golder">Team you would like to join</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Team Name" id="registerTeam">
+                            </div>
+                        </div>
+
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button class="button is-link" id="registerButton">Submit</button>
+                            </div>
+                            
+                            <div class="control golder">
+                                <a href="/"><button class="button is-light">Cancel</button></a>
+                            </div>
+                        </div>
+                        
+                    <!-- </div> -->
+                </section>
+            </div>
+
+          <!-- code -->
+
+        <!-- </div> -->
 
       </div>
-
-      <p class="subtitle golder">
-        <!-- {{{ subtitle }}} -->
-        Create an account and get logging with RunLog!
-
-      </p>
-
     </div>
-  </section>
+  </div>
+</section>
 
 
-<!-- form -->
-
-  <section class="section myForm">
-    <div class="container">
-
-      <div class="field">
-        <label class="label golder">Name</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="Name" id="registerName">
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label golder">Username</label>
-        <div class="control has-icons-left has-icons-right">
-          <input class="input" type="text" placeholder="Username" id="registerUserName">
-          <span class="icon is-small is-left">
-            <i class="fa fa-user"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <!-- <i class="fa fa-check"></i> -->
-          </span>
-        </div>
-
-        <!-- =============================================== -->
-        <!-- HIDE/SHOW CONDITIONALLY BY CHECKING DATABASE?? -->
-        <!-- ======================================================= -->
-        <!-- <p class="help is-success">This username is available</p> -->
 
 
-      </div>
-
-      <div class="field">
-
-        <label class="label golder">Email</label>
-        <div class="control has-icons-left has-icons-right">
-          <input class="input" type="email" placeholder="Email input" value="" id="registerEmail">
-          <span class="icon is-small is-left">
-            <i class="fa fa-envelope"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <!-- <i class="fa fa-warning"></i> -->
-          </span>
-        </div>
-        <!-- =============================================== -->
-        <!-- HIDE/SHOW CONDITIONALLY BY CHECKING DATABASE?? -->
-        <!-- ======================================================= -->
-        <!-- <p class="help is-danger">This email is invalid</p> -->
-
-      </div>
-
-      <div class="field">
-        <label class="label golder">Password</label>
-        <div class="control has-icons-left has-icons-right">
-          <input class="input" type="password" placeholder="must be at least 8 characters" value="" id="registerPassword">
-          <span class="icon is-small is-left">
-            <i class="fa fa-cog"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <!-- <i class="fa fa-warning"></i> -->
-          </span>
-        </div>
-        <!-- =============================================== -->
-        <!-- HIDE/SHOW CONDITIONALLY BY CHECKING REGULAR EXPRESSION? -->
-        <!-- ======================================================= -->
-        <!-- <p class="help is-danger">That password is not strong enough</p> -->
-
-      </div>
-
-      <div class="field">
-        <label class="label golder">Profile Icon</label>
-        <div class="file">
-          <label class="file-label">
-            <input class="file-input" type="file" name="profile-icon" id="registerIcon">
-            <span class="file-cta">
-              <span class="file-icon">
-                <i class="fa fa-upload"></i>
-              </span>
-              <span class="file-label">
-                Choose a file…
-              </span>
-            </span>
-          </label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label golder">Team you would like to join</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="Team Name" id="registerTeam">
-        </div>
-      </div>
-
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-link" id="registerButton">Submit</button>
-        </div>
-        <div class="control golder">
-          <a href="/"><button class="button is-light">Cancel</button></a>
-        </div>
-      </div>
-    </div>
-  </section>
