@@ -16,6 +16,7 @@ module.exports = function(app) {
     else{
       res.render('index.hbs');
     }
+  });
 
 
   app.get('/calendar', function(req, res) {
@@ -32,4 +33,4 @@ module.exports = function(app) {
     console.log(newRun);
     res.json({redirect:'index/'+ user});
   });
-}
+};
