@@ -5,7 +5,7 @@ module.exports = function(app) {
 
   app.get('/', function(req,res) {
 
-    // TODO: get current user
+    // TODO: get current user from auth
     
     db.Run.findAll({
       where: {
@@ -24,6 +24,7 @@ module.exports = function(app) {
         events.push(entry);
       }
       console.log(events);
+      // passes the events data to the calendarView
       res.render('calendarView.hbs', {events: events});
     })
 
