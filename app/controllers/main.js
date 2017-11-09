@@ -1,19 +1,18 @@
 var db = require('../db/models');
 
 module.exports = function(app) {
-  var user = '';
 
   app.get('/', function(req,res) {
 
     // TODO: get current user from auth
-    
+
     db.Run.findAll({
       where: {
         user_user_id: 1
       }
     })
     .then(function(runs) {
-      
+
       var events = [];
       for (var i = 0; i < runs.length; i++) {
         var entry = {}
@@ -27,8 +26,6 @@ module.exports = function(app) {
       // passes the events data to the calendarView
       res.render('calendarView.hbs', {events: events});
     })
-
-  
   })
 
 
@@ -44,6 +41,6 @@ module.exports = function(app) {
     var newRun = req.body;
     var id = req.body.user;
     console.log(newRun);
-    res.json({redirect:'index/'+ user});
+    res.json({redirect:'/'});
   });
 };

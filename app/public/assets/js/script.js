@@ -1,8 +1,5 @@
 $(function(){
-  var appData= {
-    userId: '',
-    feeling: ''
-  };
+
   //iffy to check localStorage for saved userinfo on page startup.
   (function checkForSavedUser(){
     if(localStorage.getItem('runLogSavedUser')){
@@ -30,8 +27,6 @@ $(function(){
     }
     //login ajax
     $.post('/login', loginInfo, function(data){
-      appData.userId = data.user;
-      console.log(appData.userId);
       window.location.href = data.redirect;
     })
   });
@@ -55,12 +50,7 @@ $(function(){
     window.location.href = '/logrun';
   })
 
-  //listen for an event on the feeling button
-  $('.feeling-button').on('click', function(){
-   appData.feeling = $(this).data('feeling');
- });
-
-   //listen for event on lig run button
+   //listen for event on log run button
    $('#logRunButton').on('click', function(){
       if(feeling === undefined){
         alert('please choose how you felt for the run');
@@ -71,8 +61,6 @@ $(function(){
           time:$('#logTime').val().trim(),
           feeling: feeling,
           message: $('#injury').val().trim()
-
-
         };
       }
       $.post('/logrun', runInfo, function(data){

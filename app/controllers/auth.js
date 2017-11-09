@@ -15,10 +15,12 @@ module.exports = function(app) {
       }
     }).then(function(data) {
       if(!data) {
-        res.json({redirect: '/login'});
+        res.render('login')
+        //res.json({redirect: '/login'});
       }
       else{
-        res.json({user: data.user_id, redirect: '/index/'+ data.user_id});
+        res.render('calendarView')
+        //res.json({user: data.user_id, redirect: '/'});
       }
     });
   });
