@@ -47,15 +47,9 @@ $(function(){
 
  //listen for event on lig run button
  $('#submitRun').on('click', function(){
-    var date = {
-        year: $('#logTimeYear').val(),
-        month: $('#logTimeMonth').val().trim(),
-        day: $('#logTimeDay').val().trim(),
-      };
-
       var runInfo = {
         user_user_id: 1,
-        run_date: date.year+'-'+date.month+'-'+date.day,
+        run_date: $('#datepicker').val().trim(),
         run_distance: $('#logDistance').val().trim(),
         run_time:$('#logTime').val().trim(),
       };
