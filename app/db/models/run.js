@@ -1,6 +1,6 @@
 
 module.exports = function(sequelize, DataTypes) {
-  let Run = sequelize.define("Run", {
+  var Run = sequelize.define("Run", {
 
     run_id: {
       type: DataTypes.INTEGER.UNSIGNED,
@@ -13,6 +13,11 @@ module.exports = function(sequelize, DataTypes) {
     run_distance: {
       type: DataTypes.FLOAT.UNSIGNED,
       defaultValue: 0.00
+    },
+
+    run_date: {
+      type: DataTypes.DATEONLY,
+      allowNull: false
     },
 
     creation_date: {

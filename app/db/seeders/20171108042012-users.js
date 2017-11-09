@@ -1,4 +1,4 @@
-let bcrypt = require('bcrypt');
+var bcrypt = require('bcrypt');
 
 'use strict';
 
@@ -21,8 +21,7 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    queryInterface.bulkDelete('Users', [{
-      user_alias: "mmenschig"
-    }])
+
+    return queryInterface.bulkDelete('Users', null, {});
   }
 };
