@@ -38,8 +38,9 @@ module.exports = function(app) {
 
   app.post('/logrun', function(req,res){
     var newRun = req.body;
-    var id = req.body.user;
-    console.log(newRun);
-    res.json({redirect:'/'});
+    db.Run.create(newRun).then(function(data){
+      res.json({redirect:'/'});
+      console.log(newRun);
+    });
   });
 };

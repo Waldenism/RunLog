@@ -47,21 +47,23 @@ $(function(){
 
  //listen for event on lig run button
  $('#submitRun').on('click', function(){
-    if(appData.feeling === undefined){
-      alert('please choose how you felt for the run');
-    }
-    else{
-      runInfo = {
-        user:appData.userId,
-        date: $('#datepicker').val().trim(),
-        distance: $('#logDistance').val().trim(),
-        time:$('#logTime').val().trim(),
+    var date = {
+        year: $('#logTimeYear').val(),
+        month: $('#logTimeMonth').val().trim(),
+        day: $('#logTimeDay').val().trim(),
       };
-      console.log("datepicker data" + runInfo.date);
-    }
+
+      var runInfo = {
+        user_user_id: 1,
+        run_date: date.year+'-'+date.month+'-'+date.day,
+        run_distance: $('#logDistance').val().trim(),
+        run_time:$('#logTime').val().trim(),
+      };
+      console.log("date data" + runInfo.year);
+
     $.post('/logrun', runInfo, function(data){
       console.log(data.redirect);
-      window.location.href = '/calendar';
+      window.location.href = '/';
     });
   });
 
