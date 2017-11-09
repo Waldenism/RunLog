@@ -1,5 +1,7 @@
 var db = require('../db/models');
 var bcrypt = require('bcrypt');
+var authController = require('../controllers/authcontroller.js');
+var passport = require('passport');
 
 module.exports = function(app) {
 
