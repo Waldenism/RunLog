@@ -1,4 +1,4 @@
-let bcrypt = require('bcrypt');
+var bcrypt = require('bcrypt');
 
 'use strict';
 

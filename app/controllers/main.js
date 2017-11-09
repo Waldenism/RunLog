@@ -1,7 +1,7 @@
-let db = require('../db/models');
+var db = require('../db/models');
 
 module.exports = function(app) {
-  let user = '';
+  var user = '';
 
   app.get('/', function(req,res) {
 
@@ -14,9 +14,9 @@ module.exports = function(app) {
     })
     .then(function(runs) {
       
-      let events = [];
-      for (let i = 0; i < runs.length; i++) {
-        let entry = {}
+      var events = [];
+      for (var i = 0; i < runs.length; i++) {
+        var entry = {}
 
         entry.title = String(runs[i].dataValues.run_distance) + 'km';
         entry.start = runs[i].dataValues.run_date;

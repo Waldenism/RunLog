@@ -1,5 +1,5 @@
-let db = require('../db/models');
-let bcrypt = require('bcrypt');
+var db = require('../db/models');
+var bcrypt = require('bcrypt');
 
 module.exports = function(app) {
 
@@ -8,7 +8,7 @@ module.exports = function(app) {
   })
 
   app.post('/login', function(req, res){
-    let email = req.body.user_email;
+    var email = req.body.user_email;
     db.User.findOne({
       where:{
         user_email: email

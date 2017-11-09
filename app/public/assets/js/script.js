@@ -39,12 +39,10 @@ $(function(){
   //register button event handdler
   $('#registerButton').on('click', function(){
     var registerInfo = {
-      name: $('#registerName').val().trim(),
+      user_alias:$('#registerUserName').val().trim(),
       user_name:$('#registerUserName').val().trim(),
       user_email:$('#registerEmail').val().trim(),
       password_hash:$('#registerPassword').val().trim(),
-      profile_icon:$('#registerIcon').val().trim(),
-      user_type: 0
     };
     $.post('/register', registerInfo, function(data){
       console.log('login data poasted');
@@ -56,7 +54,7 @@ $(function(){
     console.log(appData.userId);
     window.location.href = '/logrun';
   })
-  
+
   //listen for an event on the feeling button
   $('.feeling-button').on('click', function(){
    appData.feeling = $(this).data('feeling');
@@ -73,7 +71,7 @@ $(function(){
           time:$('#logTime').val().trim(),
           feeling: feeling,
           message: $('#injury').val().trim()
-         
+
 
         };
       }
