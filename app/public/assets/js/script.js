@@ -1,8 +1,5 @@
 $(function(){
-  var appData= {
-    userId: '',
-    feeling: ''
-  };
+
   //iffy to check localStorage for saved userinfo on page startup.
   (function checkForSavedUser(){
     if(localStorage.getItem('runLogSavedUser')){
@@ -30,8 +27,6 @@ $(function(){
     }
     //login ajax
     $.post('/login', loginInfo, function(data){
-      appData.userId = data.user;
-      console.log(appData.userId);
       window.location.href = data.redirect;
     })
   });
@@ -39,12 +34,10 @@ $(function(){
   //register button event handdler
   $('#registerButton').on('click', function(){
     var registerInfo = {
-      name: $('#registerName').val().trim(),
+      user_alias:$('#registerUserName').val().trim(),
       user_name:$('#registerUserName').val().trim(),
       user_email:$('#registerEmail').val().trim(),
       password_hash:$('#registerPassword').val().trim(),
-      profile_icon:$('#registerIcon').val().trim(),
-      user_type: 0
     };
     $.post('/register', registerInfo, function(data){
       console.log('login data poasted');
@@ -56,13 +49,8 @@ $(function(){
     console.log(appData.userId);
     window.location.href = '/logrun';
   })
-  
-  //listen for an event on the feeling button
-  $('.feeling-button').on('click', function(){
-   appData.feeling = $(this).data('feeling');
- });
 
-   //listen for event on lig run button
+   //listen for event on log run button
    $('#logRunButton').on('click', function(){
       if(feeling === undefined){
         alert('please choose how you felt for the run');
@@ -73,8 +61,6 @@ $(function(){
           time:$('#logTime').val().trim(),
           feeling: feeling,
           message: $('#injury').val().trim()
-         
-
         };
       }
       $.post('/logrun', runInfo, function(data){

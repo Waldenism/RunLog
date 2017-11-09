@@ -1,6 +1,6 @@
 
 module.exports = function(sequelize, DataTypes) {
-  let Run = sequelize.define("Run", {
+  var Run = sequelize.define("Run", {
 
     run_id: {
       type: DataTypes.INTEGER.UNSIGNED,
