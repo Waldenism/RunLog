@@ -45,32 +45,6 @@ $(function(){
     });
   });
 
-  $('#logRunBtn').on('click', function(){
-    console.log(appData.userId);
-    window.location.href = '/logrun';
-  })
-
-   //listen for event on log run button
-   $('#logRunButton').on('click', function(){
-      if(feeling === undefined){
-        alert('please choose how you felt for the run');
-      }
-      else{
-        runInfo = {
-          distance: $('#logDistance').val().trim(),
-          time:$('#logTime').val().trim(),
-          feeling: feeling,
-          message: $('#injury').val().trim()
-        };
-      }
-      $.post('/logrun', runInfo, function(data){
-        if(data.status === 200) {
-          console.log('run added');
-          window.location.href = '/calendar';
-        }
-      });
-    });
-
  //listen for event on lig run button
  $('#submitRun').on('click', function(){
     if(appData.feeling === undefined){
