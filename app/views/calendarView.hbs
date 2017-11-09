@@ -8,16 +8,21 @@
         </div>
 
         <div id="chrisNav">
-          <div id="navitem"> <a href="/login"> Logout </a> </div>
-        </div>
 
+          <!-- <div id="navitem"> Welcome {{!-- ??? --}} {{{this.user}}} </div>
+
+          <div> | </div> -->
+
+          <div id="navitem"> <a href="/login"> Logout </a> </div>
+
+        </div>
       </div>
-      
+
     </div>
 </section>
 
-<section class="section"> 
-  <div class="container"> 
+<section class="section">
+  <div class="container">
     <button><a href="/logrun"> Log a run</a></button>
   </div>
 </section>
@@ -25,28 +30,51 @@
 <section class="section">
   <div class="container">
     <div id='calendar'></div>
-  </div>  
+  </div>
 </section>
 
+
 <script type="text/javascript">
-  var events = [];
+    var myevents = [];
 
-  $(document).ready(function() {
+        $(document).ready(function() {
 
-      // page is now ready, initialize the calendar...
+            // page is now ready, initialize the calendar...
 
-      $('#calendar').fullCalendar({
-          // put your options and callbacks here
-          header: {
-            left:   'title',
-            center: '',
-            right:  'listWeek listMonth basicDay,basicWeek,month prev,next'
+          $('#calendar').fullCalendar({
+             // put your options and callbacks here
+            header: {
+              left:   'title',
+              center: '',
+              right:  'listWeek listMonth basicDay,basicWeek,month prev,next'
+            },
+            events: [
+              {
+                title: '10 miles',
+                start: '2017-11-05',
+              }, {
+                title: '5 miles',
+                start: '2017-11-06',
+              }, {
+                title: '3 miles',
+                start: '2017-11-07',
+              }, {
+                title: '4 miles',
+                start: '2017-11-08',
+              }, {
+                title: '6 miles',
+                start: '2017-11-09',
+              }, {
+                title: '3 miles',
+                start: '2017-11-10',
+              }, {
+                title: '5 miles',
+                start: '2017-11-11',
+              }
 
-          },
-          events: events
-          
-      });
+              ]
 
+            });
 
-  });
-</script>
+        });
+    </script>
