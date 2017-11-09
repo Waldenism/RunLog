@@ -103,6 +103,10 @@ body {
 	border-bottom: solid gold 2px;
 }
 
+#logDistance {
+	max-width: 300px;
+}
+
 #logEntries {
 	border: solid blue 1px;
 	background-color: gray;
@@ -127,7 +131,7 @@ html {
 /*=========================================*/
 /*MEDIA QUERIES */
 /*===========================================*/
-@media screen and (max-width: 640px) {
+/*@media screen and (max-width: 640px) {
 	#myTitle {
 		font-size: 3em;
 	}
@@ -141,4 +145,4 @@ html {
 		display: flex;
 		flex-direction: column;
 	}
-}
+}*/

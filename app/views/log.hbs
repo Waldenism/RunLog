@@ -9,7 +9,7 @@
 
       </div>
 
-      <p class="subtitle golder">
+      <p class="subtitle">
         <!-- {{{ subtitle }}} -->
         Tell me about your run.        
       </p>
@@ -23,28 +23,27 @@
   <section class="section myForm">
     <div class="container">
 
-      <div class="field">
+      <div class="field is-grouped">
         <div class="control">
 
-          <label class="label golder"> 
+          <label class="label field is-grouped"> 
             When did this run take place?
             <span class="space distanceSpace"></span>
 
-            <span class="golder distanceSpace">Year</span>
-            
+            <p><input type="text" id="datepicker"></p>
 
-              <span class="select is-small">
-                <select id="logTimeYear">
-                  <option value="2016">2016</option>
-                  <option value="2017">2017</option>
-                  <option value="2018">2018</option>
-                  <option value="2019">2019</option>
-                  <option value="2020">2020</option>
+            <!-- <span class=" distanceSpace">Year</span>
+            <span class="select is-small">
+              <select id="logTimeYear">
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+              </select>
+            </span>
 
-                </select>
-              </span>
-
-            <span class="golder distanceSpace">Month</span>
+            <span class=" distanceSpace">Month</span>
             <span class="select is-small">
                 <select id='logTimeMonth'>
                   <option value="00">00</option>
@@ -61,12 +60,11 @@
                   <option value="11">11</option>
                   <option value="12">12</option>
                 </select>
-              </span>
+            </span>
 
             
-            <span class="golder">Day</span>
-
-          <span class="select is-small">
+            <span>Day</span>
+            <span class="select is-small">
                 <select n id="logTimeDay">
                   <option value="00">00</option>
                   <option value="01">01</option>
@@ -100,10 +98,8 @@
                   <option value="29">29</option>
                   <option value="30">30</option>
                   <option value="31">31</option>
-
                 </select>
-              </span>
-
+            </span> -->
 
           </label>
 
@@ -113,9 +109,9 @@
       <div class="field">
         <div class="control">
 
-
-          <label class="label golder">
+          <label class="label field is-horizontal">
             How far did you run? 
+              <span class="space distanceSpace"></span>
               <input class="input" type="text" placeholder="Total Distance" id="logDistance">
 
                <span class="select">
@@ -133,7 +129,7 @@
       <div class="field">
         <div class="control">
 
-          <label class="label golder"> 
+          <label class="label"> 
             How long did it take you?
             <span class="space distanceSpace"></span>
 
@@ -150,7 +146,7 @@
                 </select>
               </span>
 
-            <span class="golder">Hours</span>
+            <span>Hours</span>
 
             <span class="select is-small">
                 <select>
@@ -296,7 +292,7 @@
                 </select>
               </span>
 
-            <span class="golder">Seconds</span>
+            <span>Seconds</span>
 
           </label>
 
@@ -313,3 +309,13 @@
       </div>
     </div>
   </section>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+    </script>
