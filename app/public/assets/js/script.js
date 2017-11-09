@@ -53,13 +53,11 @@ $(function(){
     else{
       runInfo = {
         user:appData.userId,
-        year: $('#logTimeYear').val(),
-        month: $('#logTimeMonth').val().trim(),
-        day: $('#logTimeDay').val().trim(),
+        date: $('#datepicker').val().trim(),
         distance: $('#logDistance').val().trim(),
         time:$('#logTime').val().trim(),
       };
-      console.log("date data" + runInfo.year);
+      console.log("datepicker data" + runInfo.date);
     }
     $.post('/logrun', runInfo, function(data){
       console.log(data.redirect);
