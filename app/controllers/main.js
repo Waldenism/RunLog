@@ -32,7 +32,7 @@ app.get('/', function(req,res){
       }
       console.log(events);
       // passes the events data to the calendarView
-      res.render('calendarView.hbs', {events: events});
+      res.render('calendarView.hbs', {events: events[0]});
     })
     }
 
