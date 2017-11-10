@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "bootcamp",
+    "username": "g99hr8mxuzjo5zux",
+    "password": "bslgv4oboks1gk3y",
     "database": "runlog_db",
-    "host": "127.0.0.1",
+    "host": "yhrz9vns005e0734.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }

@@ -2,9 +2,17 @@ var db = require('../db/models');
 
 module.exports = function(app) {
 
-  app.get('/', function(req,res) {
+let user;
+//handle get request to index
+app.post('/', function(req, res){
+  console.log(req.body);
+  user = req.body.user
+})
 
-    // TODO: get current user from auth
+app.get('/', function(req,res){
+  if(!user){
+    res.redirect('/login');
+  }else{
 
     db.Run.findAll({
       where: {
@@ -13,9 +21,9 @@ module.exports = function(app) {
     })
     .then(function(runs) {
 
-      var events = [];
-      for (var i = 0; i < runs.length; i++) {
-        var entry = {}
+      let events = [];
+      for (let i = 0; i < runs.length; i++) {
+        let entry = {}
 
         entry.title = String(runs[i].dataValues.run_distance) + 'km';
         entry.start = runs[i].dataValues.run_date;
@@ -24,13 +32,11 @@ module.exports = function(app) {
       }
       console.log(events);
       // passes the events data to the calendarView
-      res.render('calendarView.hbs', {events: events});
+      res.render('calendarView.hbs', {events: events[0]});
     })
-  })
+    }
 
-  app.get('/calendar', function(req, res) {
-    res.render('calendarView.hbs');
-  });
+ })
 
   app.get('/logrun', function(req, res) {
     res.render('log.hbs');
@@ -38,8 +44,9 @@ module.exports = function(app) {
 
   app.post('/logrun', function(req,res){
     var newRun = req.body;
-    var id = req.body.user;
-    console.log(newRun);
-    res.json({redirect:'/'});
+    db.Run.create(newRun).then(function(data){
+      res.json({redirect:'/'});
+      console.log(newRun);
+    });
   });
 };
