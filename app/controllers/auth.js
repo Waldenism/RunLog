@@ -13,21 +13,18 @@ module.exports = function(app) {
 
 //login post
   app.post('/login', function(req, res){
-<<<<<<< 91e7487fc0ddcecb3c28dcb1bf7b4bd83964baf7
-    var email = req.body.user_email;
-=======
     //get login credentials from req.body
     let user_email = req.body.user_email;
     let password_hash = req.body.password_hash;
     //look for user in database
->>>>>>> some work to fix
     db.User.findOne({
       where:{
         user_email: user_email
       }
     }).then(function(data) {
+      console.log(data);
       //if there is no user redirect to login
-      if(!data) {
+      if(data === null) {
       res.json({redirect: '/login'});
       }
       //if there is a user redirect to index by sending a json with the user and url to index
