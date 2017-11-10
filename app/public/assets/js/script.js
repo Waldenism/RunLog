@@ -13,7 +13,42 @@ $(function(){
 
   })
   $.get('/').done(function(data){
+    var events = data.events;
+    console.log(events);
+    $('#calendar').fullCalendar({
+       // put your options and callbacks here
+      header: {
+        left:   'title',
+        center: '',
+        right:  'listWeek listMonth basicDay,basicWeek,month prev,next'
+      },
+      events: [
+        {
+          title: '10 miles',
+          start: '2017-11-05',
+        }, {
+          title: '5 miles',
+          start: '2017-11-06',
+        }, {
+          title: '3 miles',
+          start: '2017-11-07',
+        }, {
+          title: '4 miles',
+          start: '2017-11-08',
+        }, {
+          title: '6 miles',
+          start: '2017-11-09',
+        }, {
+          title: '3 miles',
+          start: '2017-11-10',
+        }, {
+          title: '5 miles',
+          start: '2017-11-11',
+        }
 
+        ]
+
+      });
   });
 
   //login button event handdler
@@ -53,8 +88,9 @@ $(function(){
 
  //listen for event on lig run button
  $('#submitRun').on('click', function(){
+      var user = sessionStorage.user;
       var runInfo = {
-        user_user_id: 1,
+        user_user_id: Number(user),
         run_date: $('#datepicker').val().trim(),
         run_distance: $('#logDistance').val().trim(),
         run_time:$('#logTime').val().trim(),
